@@ -6,8 +6,8 @@
       - python-pip
 - name: Install openstacksdk library
   pip:
-    name: openstacksdk
-    state: latest
+    name: openstacksdk<0.40.0
+    state: forcereinstall
     extra_args: -U
 - name: Create clouds.yaml file
   blockinfile:
