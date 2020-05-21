@@ -1,2 +1,6 @@
 ---
 # handlers file for db-tier
+- name: restart-{{ db-service }}
+  service:
+    name: "{{ db-service }}"
+    state: restarted
