@@ -1,11 +1,11 @@
 ---
 # tasks file for db-tier
-- name: install {{ db-app }}
-  command: yum install -y "{{ db-app }}"
+- name: install {{ db_app }}
+  command: yum install -y "{{ db_app }}"
 
-- name: enable {{ db-app }} at boot
+- name: enable {{ db_app }} at boot
   service:
-    name: "{{ db-service }}"
+    name: "{{ db_service }}"
     enabled: yes
 
 - name: Check if postgresql has been initialised
@@ -13,7 +13,7 @@
     path: /var/lib/pgsql/data/PG_VERSION
   register: postgresql_initdb
 
-- name: initilize {{ db-app }}
+- name: initilize {{ db_app }}
   command: postgresql-setup initdb
   when: postgresql_initdb.stat.exists == false
   register: r_postgres_init
@@ -21,9 +21,9 @@
     r_postgres_init.rc != 0 and
     r_postgres_init.stdout != 'Data directory is not empty!'
 
-- name: start {{ db-service }}
+- name: start {{ db_service }}
   service:
-    name: "{{ db-service }}"
+    name: "{{ db_service }}"
     state: started
 
   
