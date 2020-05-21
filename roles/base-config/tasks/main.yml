@@ -6,18 +6,3 @@
     src: open_three-tier-app.repo
     dest: /etc/yum.repos.d/open_three-tier-app.repo
     mode: 0644
-
-- name: install base packages
-  yum:
-    name: "{{ item }}" 
-    state: latest
-  with_items:
-    - python2-pip
-    - python2-httpie
-    
-- name: enable sudo without tty
-  replace:
-    path: /etc/sudoers
-    regexp: '^Defaults\s*requiretty'
-    replace: 'Defaults  !requiretty'
-    backup: yes
