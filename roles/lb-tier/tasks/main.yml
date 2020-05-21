@@ -5,7 +5,7 @@
     name: "{{ service }}"
     state: latest
     
-- name: configure "(( service }}"
+- name: configure {{ service }}
   template:
     src: haproxy.cfg.j2
     dest: /etc/haproxy/haproxy.cfg

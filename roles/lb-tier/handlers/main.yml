@@ -1,6 +1,6 @@
 ---
 # handlers file for lb-tier
-- name: start "{{ service }}"
+- name: restart-{{ service }}
   service:
     name: "{{ service }}"
     enabled: true
