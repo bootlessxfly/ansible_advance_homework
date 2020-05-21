@@ -12,8 +12,8 @@
     name: "{{ item }}" 
     state: latest
   with_items:
-    - httpie
     - python-pip
+    - python2-httpie
     
 - name: enable sudo without tty
   replace:
