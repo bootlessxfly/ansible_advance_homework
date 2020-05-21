@@ -12,7 +12,7 @@
     name: "{{ item }}" 
     state: latest
   with_items:
-    - python2-python-pip
+    - python2-pip
     - python2-httpie
     
 - name: enable sudo without tty
