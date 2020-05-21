@@ -1,0 +1,10 @@
+[bastion_tower]
+bastion.af6a.example.opentlc.com  ansible_connection=local
+
+[workstation]
+workstation-3442.rhpds.opentlc.com
+
+#[internal:children]
+#frontends
+#apps
+#appdbs
