@@ -1,7 +1,7 @@
 ---
 # tasks file for db-tier
 - name: install {{ db-app }}
-  command: yum install -y "{[ db-app }}"
+  command: yum install -y "{{ db-app }}"
 
 - name: enable {{ db-app }} at boot
   service:
